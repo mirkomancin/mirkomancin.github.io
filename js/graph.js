@@ -10,7 +10,7 @@ function initializeMap() {
 	
 	locId = getUrlVars()["id"];
 
-	$.get('api/m2m.php?q=locationInfo&idLocation=' + locId, function(data) {
+	$.get('http://149.139.8.55/redlav/json/location_'+locId+'.json', function(data) {
 		
 		m2mLocation = data['location'];
 		deviceList = data['devices'];

@@ -1,0 +1,87 @@
+{
+location: {
+idLocation: "1",
+name: "Lucca 1",
+lat: "43.843287",
+lng: "10.49263",
+alt: "75",
+nasID: null,
+ssid: null,
+ownerName: null,
+note: "Lucca 1"
+},
+devices: [
+{
+idDevice: "1",
+m2mLocation_idLocation: "1",
+type: "",
+lat: "43.8487",
+lng: "10.5747",
+alt: "10",
+status: "ACTIVE",
+batteryLevel: null,
+version: null,
+note: "ZANZUINO"
+},
+{
+idDevice: "2",
+m2mLocation_idLocation: "1",
+type: "ARDUINO",
+lat: "43.725",
+lng: "10.414",
+alt: "75",
+status: "ACTIVE",
+batteryLevel: "12.77",
+version: "1.0",
+note: "ZANZUINO"
+},
+{
+idDevice: "3",
+m2mLocation_idLocation: "1",
+type: "",
+lat: "43.678",
+lng: "10.346",
+alt: "10",
+status: "ACTIVE",
+batteryLevel: null,
+version: null,
+note: "ZANZUINO"
+},
+{
+idDevice: "4",
+m2mLocation_idLocation: "1",
+type: "",
+lat: "43.957",
+lng: "10.18",
+alt: "10",
+status: "ACTIVE",
+batteryLevel: null,
+version: null,
+note: "ZANZUINO"
+},
+{
+idDevice: "5",
+m2mLocation_idLocation: "1",
+type: "",
+lat: "44.088",
+lng: "10.013",
+alt: "10",
+status: "ACTIVE",
+batteryLevel: null,
+version: null,
+note: "ZANZUINO"
+},
+{
+idDevice: "6",
+m2mLocation_idLocation: "1",
+type: "",
+lat: "43.538",
+lng: "10.3",
+alt: "10",
+status: "ACTIVE",
+batteryLevel: null,
+version: null,
+note: "ZANZUINO"
+}
+]
+}
