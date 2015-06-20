@@ -2,7 +2,7 @@ function initMaps(){
     $.ajax({
 		type: 'GET',
 		url: 'http://149.139.8.55/redlav/json/location.json',
-		dataType: 'jsonp',
+		dataType: 'json',
 		success: function (data) {
 		//$.get('http://149.139.8.55/redlav/json/location.json', function(data) {
 
