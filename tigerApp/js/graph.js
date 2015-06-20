@@ -170,7 +170,7 @@ function createGauges(id)
 	$('#gauge_ex_anemometry').html("");
 	$('#gauge_ex_pluviometry').html("");
 	
-	$.get('api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
+	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
 
 		$('#gauge_click_status').html("<img class=\"dashboard-icon\" src=\"images/dashboard/device.png\" /><div>Status of device:</div>");
 		$('#gauge_click_thermometry').html("<img class=\"dashboard-icon\" src=\"images/dashboard/thermometer.png\" /><div>Thermometry sensors:</div>");
