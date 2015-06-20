@@ -427,7 +427,7 @@ function updateGauges(id)
 		var json_pay = JSON.parse(payload);
 		
 		var deviceId=id;
-		$.get('api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
+		$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
 
 			//$('#graphList').html("");
 
@@ -499,7 +499,7 @@ function updateHum(id)
 		var json_pay = JSON.parse(payload);
 		
 		var deviceId=id;
-		$.get('api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
+		$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
 
 			//$('#graphList').html("");
 
