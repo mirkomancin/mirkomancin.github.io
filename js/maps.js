@@ -1,10 +1,5 @@
 function initMaps(){
-    $.ajax({
-		type: 'GET',
-		url: 'http://149.139.8.55/redlav/json/location.json',
-		dataType: 'json',
-		success: function (data) {
-		//$.get('http://149.139.8.55/redlav/json/location.json', function(data) {
+	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=location', function(data) {
 
 			var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
@@ -38,6 +33,5 @@ function initMaps(){
 				    .bindPopup('<a href="graphs.php?id=' + data[index]['idLocation'] + '">' + data[index]['note'] + '</a>')
 				    .openPopup();	
 			}
-		}
-	}); 	
+		}); 	
 }
