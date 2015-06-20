@@ -10,6 +10,27 @@ function initializeMap() {
 	
 	locId = getUrlVars()["id"];
 
+	$.ajax({
+		type: 'GET',
+		url: 'http://149.139.8.55/redlav/json/location_'+locId+'.json',
+		dataType: 'jsonp',
+		success: function (data) {
+			//code
+			m2mLocation = data['location'];
+			deviceList = data['devices'];
+
+			loadMap(data['location']['lat'],data['location']['lng']);
+
+			$('#locationName').html(m2mLocation['name']);
+
+			for(index in data['devices'])
+			{
+				//createDeviceListElement(data['devices'][index]);
+				createM2MDeviceMarker(data['devices'][index]);	
+			}
+		}
+	});
+	/*
 	$.get('http://149.139.8.55/redlav/json/location_'+locId+'.json', function(data) {
 		
 		m2mLocation = data['location'];
@@ -25,6 +46,7 @@ function initializeMap() {
 			createM2MDeviceMarker(data['devices'][index]);	
 		}
 	});
+	*/
 }
 
 function loadMap(lat,lng)

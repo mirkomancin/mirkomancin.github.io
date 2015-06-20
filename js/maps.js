@@ -1,5 +1,10 @@
 function initMaps(){
-	$.get('http://149.139.8.55/redlav/json/location.json', function(data) {
+    $.ajax({
+		type: 'GET',
+		url: 'http://149.139.8.55/redlav/json/location.json',
+		dataType: 'jsonp',
+		success: function (data) {
+	//$.get('http://149.139.8.55/redlav/json/location.json', function(data) {
 
 			var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
