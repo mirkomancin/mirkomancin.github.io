@@ -8,7 +8,7 @@ function initialize() {
 	};
 	map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
 
-	$.get('api/m2m.php?q=all_locations_devices', function(data) {
+	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=all_locations_devices', function(data) {
 		
 		for(index in data)
 		 createM2MLocationMarker(data);	
