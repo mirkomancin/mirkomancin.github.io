@@ -419,7 +419,7 @@ function updateGauges(id)
 {
 	//locId = getUrlVars()["id"];
 	
-	$.get('api/m2m.php?q=last_log&deviceId=' + id, function(data) {
+	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=last_log&deviceId=' + id, function(data) {
 		
 		//alert(JSON.stringify(data[0]));
 		var json = JSON.parse(JSON.stringify(data[0]));
@@ -447,7 +447,7 @@ function updateTherm(id)
 {
 	//locId = getUrlVars()["id"];
 	
-	$.get('api/m2m.php?q=last_log&deviceId=' + id, function(data) {
+	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=last_log&deviceId=' + id, function(data) {
 		
 		//alert(JSON.stringify(data[0]));
 		var json = JSON.parse(JSON.stringify(data[0]));
@@ -455,7 +455,7 @@ function updateTherm(id)
 		var json_pay = JSON.parse(payload);
 		
 		var deviceId=id;
-		$.get('api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
+		$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=deviceInfo&idDevice='+deviceId, function(data) {
 
 			//$('#graphList').html("");
 
@@ -491,7 +491,7 @@ function updateHum(id)
 {
 	//locId = getUrlVars()["id"];
 	
-	$.get('api/m2m.php?q=last_log&deviceId=' + id, function(data) {
+	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=last_log&deviceId=' + id, function(data) {
 		
 		//alert(JSON.stringify(data[0]));
 		var json = JSON.parse(JSON.stringify(data[0]));
@@ -591,7 +591,7 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 
 	$('#graphDevice').append(html);
 
-	$.get('api/m2m.php?q=latest_log&deviceId='+deviceId, function(dataArray) {
+	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=latest_log&deviceId='+deviceId, function(dataArray) {
 
 		var data = dataArray['data'];
 
@@ -689,7 +689,7 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 		function update() {
 			
 			
-			$.get('api/m2m.php?q=latest_log&deviceId='+deviceId, function(data_) {
+			$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=latest_log&deviceId='+deviceId, function(data_) {
 
 					data = data_['data'];
 			

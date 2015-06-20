@@ -30,7 +30,7 @@ function initMaps(){
 				var latlng = L.latLng([ parseFloat(data[index]['lat']) , parseFloat(data[index]['lng']) ]);
 				// add a marker in the given location, attach some popup content to it and open the popup
 				L.marker(latlng).addTo(map)
-				    .bindPopup('<a href="graphs.php?id=' + data[index]['idLocation'] + '">' + data[index]['note'] + '</a>')
+				    .bindPopup('<a href="graphs.html?id=' + data[index]['idLocation'] + '">' + data[index]['note'] + '</a>')
 				    .openPopup();	
 			}
 		}); 	
