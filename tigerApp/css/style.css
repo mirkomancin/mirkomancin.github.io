@@ -1089,6 +1089,12 @@
 		#footer .copyright
 		{
 			line-height: 1.25em;
+			position: absolute; 
+			height: 10px; 
+			border: solid; 
+			bottom: 0; 
+			right: 0;  
+			left: 0;
 		}
 		
 			#footer .copyright p
