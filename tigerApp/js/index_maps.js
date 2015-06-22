@@ -4,19 +4,28 @@ function initMaps(){
 			var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
 			var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
 			
-		    var osm   = L.tileLayer(osmUrl, {id: 'examples.map-20v6611k', attribution: osmAttrib});
+			var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib});
 			
 			var map = L.map('map', {
-				center: [43.843287,10.49263],
-				zoom: 15,
-				layers: [osm]
-			});
-	
+			    layers: [osmMap] // only add one!
+		    })
+		    .setView([43.8487, 10.5747], 11);
+
 			var baseLayers = {
-				"OpenStreetMap": osm
+				"OSM Map": osmMap
+				  
 			};
-	
-			L.control.layers(baseLayers, osm).addTo(map);
+
+			var overlays = {
+				"Layer di Interesse ": redlavplaces,
+							"Aedes Albopictus Eggs  Actual": eggsMap
+	 
+			};
+
+		 
+		 L.control.layers(baseLayers,osmMap).addTo(map);
+			
+			
 
 			
 			for(index in data){
