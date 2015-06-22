@@ -6,21 +6,15 @@ function initMaps(){
 			
 		    var osm   = L.tileLayer(osmUrl, {id: 'examples.map-20v6611k', attribution: osmAttrib});
 			
-			
-			var owmUrl = 'http://{s}.tile.openweathermap.org/map/rain/{z}/{x}/{y}.png';
-			var owmAttrib = 'Map data &copy; <a href="http://openweathermap.org">OpenWeatherMap</a>';
-			
-			var owm  = L.tileLayer(owmUrl, {id: 'examples.map-i875mjb7',   attribution: owmAttrib, opacity: 0.5});
-	
 			var map = L.map('map', {
 				center: [43.843287,10.49263],
 				zoom: 15,
-				layers: [osm, owm]
+				layers: [osm]
 			});
 	
 			var baseLayers = {
-				"OpenStreetMap": osm,
-				"OpenWheater": owm
+				"OpenStreetMap": osm
+				
 			};
 	
 			L.control.layers(baseLayers, osm).addTo(map);

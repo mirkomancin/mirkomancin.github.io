@@ -1,2 +1,3 @@
-# loweherz.github.io
-My First Github Page
+# REDLAV Project
+
+Design by: Mirko Mancin
