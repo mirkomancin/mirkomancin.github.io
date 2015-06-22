@@ -16,11 +16,7 @@ function initMaps(){
 				  
 			};
 
-			var overlays = {
-				"Layer di Interesse ": redlavplaces,
-							"Aedes Albopictus Eggs  Actual": eggsMap
-	 
-			};
+			
 
 		 
 		 L.control.layers(baseLayers,osmMap).addTo(map);
