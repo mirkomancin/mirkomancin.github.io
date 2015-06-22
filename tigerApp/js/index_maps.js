@@ -14,7 +14,6 @@ function initMaps(){
 	
 			var baseLayers = {
 				"OpenStreetMap": osm
-				
 			};
 	
 			L.control.layers(baseLayers, osm).addTo(map);
