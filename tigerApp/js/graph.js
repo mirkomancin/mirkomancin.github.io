@@ -6,81 +6,14 @@ var graphData = [];
 var plot = null;
 var updateInterval = 30000;
 
-function initializeMap() {
-	
-	locId = getUrlVars()["id"];
-
-	$.get('http://149.139.8.55/tigermonitor/api/m2m.php?q=locationInfo&idLocation=' + locId, function(data) {
-		
-		m2mLocation = data['location'];
-		deviceList = data['devices'];
-
-		loadMap(data['location']['lat'],data['location']['lng']);
-
-		$('#locationName').html(m2mLocation['name']);
-
-		for(index in data['devices'])
-		{
-			//createDeviceListElement(data['devices'][index]);
-			createM2MDeviceMarker(data['devices'][index]);	
-		}
-	});
-}
-
-function loadMap(lat,lng)
-{
-	map = L.map('map').setView([lat,lng], 8);
-			
-	// add an OpenStreetMap tile layer
-	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-	    attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-	}).addTo(map);
-}
-
-function getUrlVars() {
-	var vars = {};
-	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-		vars[key] = value;
-	});
-	return vars;
-}
-
-
-function popup(url) 
-{
-	 params  = 'width='+screen.width;
-	 params += ', height='+screen.height;
-	 params += ', top=0, left=0'
-	 params += ', fullscreen=yes';
-	
-	 windowname = '';
-	 
-	 newwin=window.open(url,windowname, params);
-	 if (window.focus) {newwin.focus()}
-	 return false;
-}
-
-
-function createM2MDeviceMarker(data) {
-		
-	var latlng = L.latLng([ parseFloat(data['lat']) , parseFloat(data['lng']) ]);
-	// add a marker in the given location, attach some popup content to it and open the popup
-	L.marker(latlng).addTo(map) 
-	    //.bindPopup('<a target="_blank" href="data/gauge.php?id=' + data['idDevice'] + '">' + data['type'] +' '+ data['idDevice'] + '</a>')
-	    .bindPopup($('<a href="#">' + data['note'] +' - '+ data['idDevice'] + '</a>').click(function(){
-	    	initializeGraph(data['idDevice']);
-	    })[0]);
-		//.openPopup();	
-	
-}
-
 
 //---GRAFICI---
 
 var gauges = [];
 
-function initializeGraph(id)
+function initializeGraph()
 {
+	id = getUrlVars()["id"];
 	//alert(id);
 	$("#gauge_click_thermometry").off("click");
 	$("#gauge_click_igrometry").off("click");

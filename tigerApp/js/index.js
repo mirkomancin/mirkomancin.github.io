@@ -29,33 +29,24 @@ function initMaps() {
 
 function loadMap(lat,lng)
 {
-	var redlavplaces = new L.LayerGroup();
 	
-	var imageUrl_uova = 'http://149.139.8.55/data/redlav/images/eggs_last.png',
 	imageBounds = L.latLngBounds([[38.73847, 7.419861],[44.58014, 12.31153]]);
      
      var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
          thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
         
-      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          osmAttrib = '&copy; ' + osmLink + ' Contributors',
-          landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
-          thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink;
-
+    
    // var southWest = new L.LatLng(38.73847, 7.419861),northEast = new L.LatLng(44.58014, 12.31153), bounds = new L.LatLngBounds(southWest, northEast);
 
      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
          osmAttrib = '&copy; ' + osmLink + ' Contributors',
          landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
          thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink,
-         redUrleggs = 'http://149.139.8.55/data/redlav/images/eggs_raster/{z}/{x}/{y}.png',
-         redAttrib = 'Project Redlav';
+         
 
      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
          landMap = L.tileLayer(landUrl, {attribution: thunAttrib}),
-         eggsMap = L.tileLayer(redUrleggs, {   tms: true,
-                                               opacity: 0.3, 
-                                               attribution: redAttrib});
+         
 
 
 	
@@ -71,7 +62,6 @@ function loadMap(lat,lng)
 		};
 
 		var overlays = {
-			"Layer di Interesse ": redlavplaces,
                         "Aedes Albopictus Eggs  Actual": eggsMap
  
 		};
@@ -116,7 +106,7 @@ function createM2MDeviceMarker(data) {
 	// add a marker in the given location, attach some popup content to it and open the popup
 	L.marker(latlng).addTo(map) 
 	    //.bindPopup('<a target="_blank" href="data/gauge.php?id=' + data['idDevice'] + '">' + data['type'] +' '+ data['idDevice'] + '</a>')
-	    .bindPopup($('<a href="#">' + data['note'] +' - '+ data['idDevice'] + '</a>').click(function(){
+	    .bindPopup($('<a href="graphs.html?id="'+data['idDevice']+'>' + data['note'] +' - '+ data['idDevice'] + '</a>').click(function(){
 	    	initializeGraph(data['idDevice']);
 	    })[0]);
 		//.openPopup();	
