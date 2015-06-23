@@ -14,16 +14,18 @@ function initMaps() {
 		
 		m2mLocation = data['location'];
 		deviceList = data['devices'];
-
-		loadMap(data['location']['lat'],data['location']['lng']);
-
-		$('#locationName').html(m2mLocation['name']);
-
+		
 		for(index in data['devices'])
 		{
 			//createDeviceListElement(data['devices'][index]);
 			createM2MDeviceMarker(data['devices'][index]);	
 		}
+		
+		loadMap(data['location']['lat'],data['location']['lng']);
+
+		$('#locationName').html(m2mLocation['name']);
+
+		
 	});
 }
 
@@ -54,7 +56,7 @@ function loadMap(lat,lng)
 	map = L.map('map', {
 			    layers: [osmMap] // only add one!
 		    })
-		    .setView([lat,lng], 8);
+		    .setView([43.8487, 10.5747], 9);
 
 		var baseLayers = {
 			"OSM Mapnik": osmMap
@@ -106,7 +108,7 @@ function createM2MDeviceMarker(data) {
 	// add a marker in the given location, attach some popup content to it and open the popup
 	L.marker(latlng).addTo(map) 
 	    //.bindPopup('<a target="_blank" href="data/gauge.php?id=' + data['idDevice'] + '">' + data['type'] +' '+ data['idDevice'] + '</a>')
-	    .bindPopup($('<a href="graphs.html?id="'+data['idDevice']+'>' + data['note'] +' - '+ data['idDevice'] + '</a>').click(function(){
+	    .bindPopup($('<a href="graphs.html?id='+data['idDevice']+'">' + data['note'] +' - '+ data['idDevice'] + '</a>').click(function(){
 	    	initializeGraph(data['idDevice']);
 	    })[0]);
 		//.openPopup();	
