@@ -60,7 +60,7 @@ function loadMap(lat,lng)
 
 	
 	
-	map = L.map('tiger', {
+	map = L.map('map', {
 			    layers: [osmMap] // only add one!
 		    })
 		    .setView([lat,lng], 8);
