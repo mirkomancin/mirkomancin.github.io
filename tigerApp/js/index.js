@@ -41,7 +41,7 @@ function loadMap(lat,lng)
      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
          osmAttrib = '&copy; ' + osmLink + ' Contributors',
          landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
-         thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink,
+         thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink;
          
 
      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
