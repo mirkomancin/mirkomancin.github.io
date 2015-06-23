@@ -45,7 +45,7 @@ function loadMap(lat,lng)
          
 
      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
-         landMap = L.tileLayer(landUrl, {attribution: thunAttrib}),
+         landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
          
 
 
