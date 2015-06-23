@@ -32,20 +32,20 @@ function loadMap(lat,lng)
 	
 	imageBounds = L.latLngBounds([[38.73847, 7.419861],[44.58014, 12.31153]]);
      
-     var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>',
-         thunLink = '<a href="http://thunderforest.com/">Thunderforest</a>';
+     var osmLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
         
     
    // var southWest = new L.LatLng(38.73847, 7.419861),northEast = new L.LatLng(44.58014, 12.31153), bounds = new L.LatLngBounds(southWest, northEast);
 
      var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
          osmAttrib = '&copy; ' + osmLink + ' Contributors',
-         landUrl = 'http://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}.png',
-         thunAttrib = '&copy; '+osmLink+' Contributors & '+thunLink;
-         
+         redUrleggs = 'http://149.139.8.55/data/redlav/images/eggs_raster/{z}/{x}/{y}.png',
+         redAttrib = 'Project Redlav';
 
      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib}),
-         landMap = L.tileLayer(landUrl, {attribution: thunAttrib});
+         eggsMap = L.tileLayer(redUrleggs, {   tms: true,
+                                               opacity: 0.3, 
+                                               attribution: redAttrib});
          
 
 
