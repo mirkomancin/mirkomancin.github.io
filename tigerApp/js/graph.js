@@ -477,29 +477,27 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
     
 	//create dedicated Div	
 	if(type=="temp")
-		graphTitle = "°C";
+		graphTitle = "Temperature";
 	else if(type=="hum")
-		graphTitle = "%";
+		graphTitle = "Humidity";
 	else if(type=="lux")
-		graphTitle = "lux";
+		graphTitle = "Light";
 	else if(type=="rpm")
-		graphTitle = "rpm";				
+		graphTitle = "RPM Anemometer";				
     else if(type=="pp_count")
-		graphTitle = "rpm";
-	else if(type=="volt")
-		graphTitle = "V";
+		graphTitle = "Pluviometer";
+	else if(type=="battery")
+		graphTitle = "Battery level";
 	else if(type=="lipo")
-		graphTitle = "V";
-	else if(type=="moisture")
-		graphTitle = "%";
+		graphTitle = "LiPo level";
    	else if(type=="waterTemp")
-		graphTitle = "°C";
-	else if(type=="remoteTemp")
-		graphTitle = "°C";
-	else if(type=="remotePresence")
-		graphTitle = "";
-	else if(type=="remoteVolt")
-		graphTitle = "V";
+		graphTitle = "Water Temperature";
+	else if(name=="remoteTemp")
+		graphTitle = "Remote Temperature";
+	else if(name=="remotePresence")
+		graphTitle = "Water Presence";
+	else if(name=="remoteVolt")
+		graphTitle = "Remote battery level";
 
 
 	var html = '<div><p style="margin-bottom: 0;">'+graphTitle+' ('+unita+') </p><div id="'+placeholder+'" style="width:100%;height:400px;"></div></div>';
