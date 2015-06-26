@@ -476,29 +476,29 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
     var graphTitle;
     
 	//create dedicated Div	
-	if(name=="temp")
+	if(type=="temp")
 		label = "°C";
-	else if(name=="hum")
+	else if(type=="hum")
 		label = "%";
-	else if(name=="lux")
+	else if(type=="lux")
 		label = "lux";
-	else if(name=="rpm")
+	else if(type=="rpm")
 		label = "rpm";				
-    else if(name=="pp_count")
+    else if(type=="pp_count")
 		label = "rpm";
-	else if(name=="volt")
+	else if(type=="volt")
 		label = "V";
-	else if(name=="lipo")
+	else if(type=="lipo")
 		label = "V";
-	else if(name=="moisture")
+	else if(type=="moisture")
 		label = "%";
-   	else if(name=="waterTemp")
+   	else if(type=="waterTemp")
 		label = "°C";
-	else if(name=="remoteTemp")
+	else if(type=="remoteTemp")
 		label = "°C";
-	else if(name=="remotePresence")
+	else if(type=="remotePresence")
 		label = "";
-	else if(name=="remoteVolt")
+	else if(type=="remoteVolt")
 		label = "V";
 
 
