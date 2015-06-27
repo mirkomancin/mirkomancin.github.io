@@ -591,6 +591,8 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 			}
 		};
 		
+		console.log("placeholder: " + placeholder);
+		
 		var plot = $.plot($('#' + placeholder), [{
 			data : graphData//,
 			//label : "Data (" + unita + ")"
