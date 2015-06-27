@@ -53,7 +53,7 @@ function createGauge(name, label, min, max)
 		label = "lux";
 	else if(name=="rpm")
 		label = "rpm";				
-    else if(name=="pp_count")
+    	else if(name=="pp_count")
 		label = "rpm";
 	else if(name=="volt")
 		label = "V";
@@ -122,7 +122,7 @@ function createGauges(id)
 				name = "Light";
 			else if(name=="rpm")
 				name = "RPM Anemometer";				
-		    else if(name=="pp_count")
+		    	else if(name=="pp_count")
 				name = "Pluviometer";
 			else if(name=="volt")
 				name = "Battery level";
@@ -484,9 +484,9 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 		graphTitle = "Light";
 	else if(type=="rpm")
 		graphTitle = "RPM Anemometer";				
-    else if(type=="pp_count")
+    	else if(type=="pp_count")
 		graphTitle = "Pluviometer";
-	else if(type=="battery")
+	else if(type=="volt")
 		graphTitle = "Battery level";
 	else if(type=="lipo")
 		graphTitle = "LiPo level";
