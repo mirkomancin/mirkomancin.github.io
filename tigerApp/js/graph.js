@@ -353,7 +353,7 @@ function updateGauges(id)
 			var sensorTypes = data['sensorTypes']; 
 	
 			for(index in sensorTypes){
-				if( (sensorTypes[index]['type'] != "termometria") && (sensorTypes[index]['type'] != "igrometria") ){
+				if( (sensorTypes[index]['type'] != "light") && (sensorTypes[index]['type'] != "termometria") && (sensorTypes[index]['type'] != "igrometria") ){
 					gauges[sensorTypes[index]['name']].redraw(json_pay[sensorTypes[index]['name']]);
 				}
 			}
