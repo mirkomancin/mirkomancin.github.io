@@ -51,6 +51,8 @@ function createGauge(name, label, min, max)
 		label = "%";
 	else if(name=="solar")
 		label = "lux";
+	else if(name=="lux")
+		label = "lux";
 	else if(name=="rpm")
 		label = "rpm";				
     	else if(name=="pp_count")
@@ -119,6 +121,8 @@ function createGauges(id)
 			else if(name=="hum")
 				name = "Humidity";
 			else if(name=="solar")
+				name = "Light";
+			else if(name=="lux")
 				name = "Light";
 			else if(name=="rpm")
 				name = "RPM Anemometer";				
@@ -481,6 +485,8 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 	else if(type=="hum")
 		graphTitle = "Humidity";
 	else if(type=="solar")
+		graphTitle = "Light";
+	else if(type=="lux")
 		graphTitle = "Light";
 	else if(type=="rpm")
 		graphTitle = "RPM Anemometer";				
