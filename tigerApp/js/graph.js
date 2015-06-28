@@ -49,8 +49,6 @@ function createGauge(name, label, min, max)
 		label = "°C";
 	else if(name=="hum")
 		label = "%";
-	else if(name=="solar")
-		label = "lux";
 	else if(name=="lux")
 		label = "lux";
 	else if(name=="rpm")
@@ -120,8 +118,6 @@ function createGauges(id)
 				name = "Temperature";
 			else if(name=="hum")
 				name = "Humidity";
-			else if(name=="solar")
-				name = "Light";
 			else if(name=="lux")
 				name = "Light";
 			else if(name=="rpm")
@@ -484,8 +480,6 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 		graphTitle = "Temperature";
 	else if(type=="hum")
 		graphTitle = "Humidity";
-	else if(type=="solar")
-		graphTitle = "Light";
 	else if(type=="lux")
 		graphTitle = "Light";
 	else if(type=="rpm")
