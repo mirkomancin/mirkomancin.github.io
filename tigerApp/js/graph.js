@@ -118,7 +118,7 @@ function createGauges(id)
 				name = "Temperature";
 			else if(name=="hum")
 				name = "Humidity";
-			else if(name=="lux")
+			else if(name=="solar")
 				name = "Light";
 			else if(name=="rpm")
 				name = "RPM Anemometer";				
@@ -480,7 +480,7 @@ function loadGraphData(deviceId,type, placeholder, sensorType,min,max,unita) {
 		graphTitle = "Temperature";
 	else if(type=="hum")
 		graphTitle = "Humidity";
-	else if(type=="lux")
+	else if(type=="solar")
 		graphTitle = "Light";
 	else if(type=="rpm")
 		graphTitle = "RPM Anemometer";				
