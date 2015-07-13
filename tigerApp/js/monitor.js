@@ -42,11 +42,17 @@ function loadMap(lat,lng)
          osmAttrib = '&copy; ' + osmLink + ' Contributors';
 
      var osmMap = L.tileLayer(osmUrl, {attribution: osmAttrib});
+		  
+
+	//L.marker([51.5, -0.09], {icon: greenIcon}).addTo(map).bindPopup("I am a green leaf.");
+	
+	
+	
 	
 	map = L.map('map', {
 			    layers: [osmMap] // only add one!
 		    })
-		    .setView([43.8487, 10.5747], 9);
+		    .setView([43.8487, 10.5747], 8);
 
 		var baseLayers = {
 			"OSM Mapnik": osmMap			  
@@ -56,6 +62,20 @@ function loadMap(lat,lng)
 		};
 
      
+	 
+	 var title = new L.Control();
+		title.onAdd = function (map) {
+			this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+			this.update();
+			return this._div;
+		};
+		title.update = function () {
+			this._div.innerHTML = '<div style="background:#fff;color:#000;"><h2>#Zanzara tigre maps</h2>Centraline monitoraggio</div>'
+		};
+		title.addTo(map);
+		
+	 
+	 
      L.control.layers(baseLayers,overlays).addTo(map);
 	/*		
 	// add an OpenStreetMap tile layer
@@ -90,10 +110,25 @@ function popup(url)
 
 
 function createM2MDeviceMarker(data) {
+	
+	
+	var LeafIcon = L.Icon.extend({
+		options: {
+			//shadowUrl: 'leaf-shadow.png',
+			iconSize:     [60, 60],
+			//shadowSize:   [50, 64],
+			iconAnchor:   [22, 94],
+			//shadowAnchor: [4, 62],
+			popupAnchor:  [-3, -76]
+		}
+	});
+
+	
+	var icon = new LeafIcon({iconUrl: 'images/monitor-icon.png'}); 
 		
 	var latlng = L.latLng([ parseFloat(data['lat']) , parseFloat(data['lng']) ]);
 	// add a marker in the given location, attach some popup content to it and open the popup
-	L.marker(latlng).addTo(map) 
+	L.marker(latlng, {icon: icon}).addTo(map) 
 	    //.bindPopup('<a target="_blank" href="data/gauge.php?id=' + data['idDevice'] + '">' + data['type'] +' '+ data['idDevice'] + '</a>')
 	    .bindPopup($('<a href="graphs.html?id='+data['idDevice']+'">' + data['note'] +' - '+ data['idDevice'] + '</a>').click(function(){
 	    	//initializeGraph(data['idDevice']);
